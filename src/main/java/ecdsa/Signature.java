@@ -39,11 +39,11 @@ public class Signature {
         BigInteger r = sign[0];
         BigInteger s = sign[1];
 
-        if (r.compareTo(n) >= 0) {
+        if (r.compareTo(BigInteger.ONE) < 0 || r.compareTo(n) >= 0) {
             System.out.println(" r : Message NOT VERIFIED");
             return false;
         }
-        if (s.compareTo(n) >= 0) {
+        if (s.compareTo(BigInteger.ONE) < 0 || s.compareTo(n) >= 0) {
             System.out.println(" s :Message NOT VERIFIED");
             return false;
         }
